@@ -1,0 +1,1 @@
+start C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe C:\Users\arcgisadmin\Documents\GitHub\trailsdb_scripts_python3\Batch_files_etc\Intersections_running_order.py
