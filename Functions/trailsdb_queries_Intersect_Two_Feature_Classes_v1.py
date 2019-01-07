@@ -102,8 +102,7 @@ def intersectFeatureClassesFromTrailsdb_returnName_v1(mainFeatureName, dataset_q
 	if arcpy.Exists(outFeature):
 		arcpy.Delete_management(outFeature)
 
-	#arcpy.Intersect_analysis([mainFeature, intersectFeature], outFeature)
-	arcpy.PairwiseIntersect_analysis([mainFeature, intersectFeature], outFeature)
+	arcpy.Intersect_analysis([mainFeature, intersectFeature], outFeature)
 
 	for field in outFeatureFieldsWithDomain:
 		fieldDomain = outFeatureFieldsDomains.get(field)
