@@ -4,7 +4,7 @@ sys.path.append("C:\\Trailsdb_Scripts\\Variables")
 from Connection_to_trailsdb_ArcGIS_Pro import *
 
 sys.path.append(functionsFolder)
-from trailsdb_queries_Intersect_Two_Feature_Classes_v1 import intersectFeatureClassesFromTrailsdb_returnName_v1
+from trailsdb_queries_PairwiseIntersect_Two_Feature_Classes_v1 import intersectFeatureClassesFromTrailsdb_returnName_v1
 
 
 #Trailsdb
