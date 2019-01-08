@@ -9,8 +9,8 @@ from trailsdb_queries_PairwiseIntersect_Two_Feature_Classes_v1 import intersectF
 
 #Trailsdb
 statusList = ["reg","pro"]
-#mainFeatureList = ["trail_code","project_trail","manager","owner"]
-mainFeatureList = ["trail_code"]
+mainFeatureList = ["trail_code","project_trail","manager","owner"]
+#mainFeatureList = ["trail_code"]
 datasetsDict = {"reg":["registered_info"],"pro":["proposed_info","proposed_signage_info"]}
 mainFeaturesIntersectToDict = {}
 
