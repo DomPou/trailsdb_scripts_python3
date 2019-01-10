@@ -111,8 +111,6 @@ def intersectionsTrailsDB_queries_v2():
 
 			for currentFeatureName in intersectFeatures:
 				currentFeaturePath = "in_memory\\" + currentFeatureName
-				#print(currentMainFeature)
-				#print(currentFeatureName)
 				if "int_" + currentMainFeature in currentFeatureName:
 					#print("Still fuck yeah")
 					if currentFeatureName[-3:] == status:
@@ -122,13 +120,15 @@ def intersectionsTrailsDB_queries_v2():
 								for row in arcpy.da.SearchCursor(currentFeaturePath, [mainFieldIntersects, intersectLastEditDateField]):
 									mainValue = row[0]
 									lastEditDate = row[1]
-									actualLastEditDatesDictKey = row[0] + intersectLastEditDateField
-									currentLastEditDate = actualLastEditDatesDict.get(actualLastEditDatesDictKey)
-									if not currentLastEditDate is None:
-										if lastEditDate > currentLastEditDate:
-											actualLastEditDatesDict.update({actualLastEditDatesDictKey:lastEditDate})
-									if currentLastEditDate is None:
-										actualLastEditDatesDict.update({actualLastEditDatesDictKey: lastEditDate})
+									# Ignore when mainValue is none (an error that will be reported in another script)
+									if not mainValue is None:
+										actualLastEditDatesDictKey = mainValue + intersectLastEditDateField
+										currentLastEditDate = actualLastEditDatesDict.get(actualLastEditDatesDictKey)
+										if not currentLastEditDate is None:
+											if lastEditDate > currentLastEditDate:
+												actualLastEditDatesDict.update({actualLastEditDatesDictKey:lastEditDate})
+										if currentLastEditDate is None:
+											actualLastEditDatesDict.update({actualLastEditDatesDictKey: lastEditDate})
 
 			# Check last edits dates in validation table
 			for row in arcpy.da.SearchCursor(validationTablePath, validationTableFieldsNames):

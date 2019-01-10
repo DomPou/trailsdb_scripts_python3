@@ -1,4 +1,4 @@
-import sys, os, arcpy, string
+import sys, arcpy, time
 
 sys.path.append("C:\\Trailsdb_Scripts\\Variables")
 from Connection_to_trailsdb_ArcGIS_Pro import *
@@ -16,6 +16,9 @@ tablesJoinedFields =[
 ]
 
 def intersectFeatureClassesFromTrailsdb_returnName_v1(mainFeatureName, dataset_query, intersectFeatureName, database_version):
+
+	start = time.time()
+
 	# General Variables
 	gdbVariables = trailsdb_or_tests(database_version)
 	gdbFeaturesRoot = gdbVariables[2]
@@ -50,6 +53,7 @@ def intersectFeatureClassesFromTrailsdb_returnName_v1(mainFeatureName, dataset_q
 
 
 	outFeatureName = "int_" + mainFeatureRoot + "_" + intersectFeatureRoot + nameFeatureEnd
+	print(outFeatureName)
 	outFeature = gdbPath_queries + dataset_query + "\\" + gdbName_queries + ".sde." + outFeatureName
 
 	# output Fields
@@ -102,7 +106,7 @@ def intersectFeatureClassesFromTrailsdb_returnName_v1(mainFeatureName, dataset_q
 	if arcpy.Exists(outFeature):
 		arcpy.Delete_management(outFeature)
 
-	arcpy.PairwiseIntersect_analysis([mainFeature, intersectFeature], outFeature)
+	arcpy.Intersect_analysis([mainFeature, intersectFeature], outFeature)
 
 	for field in outFeatureFieldsWithDomain:
 		fieldDomain = outFeatureFieldsDomains.get(field)
@@ -118,6 +122,10 @@ def intersectFeatureClassesFromTrailsdb_returnName_v1(mainFeatureName, dataset_q
 			try:
 				arcpy.AlterField_management(outFeature, field.name, newName)
 			except: continue
+
+	stop = time.time()
+
+	print("Time to make trailsdb gdb = %02d:%02d:%02d" % (int(stop - start) / 3600, int(((stop - start) % 3600) / 60), int((stop - start) % 60)))
 
 	return outFeatureName
 

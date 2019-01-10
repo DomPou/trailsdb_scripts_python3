@@ -54,7 +54,7 @@ def intersectFeatureClassesFromTrailsdb_returnName_v2(mainFeatureName, dataset_q
 
 	outFeatureName = "int_" + mainFeatureRoot + "_" + intersectFeatureRoot + nameFeatureEnd
 
-	#print(outFeatureName)
+	print(outFeatureName)
 
 	outFeature = "in_memory\\" + outFeatureName
 
