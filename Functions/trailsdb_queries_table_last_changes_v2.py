@@ -232,7 +232,7 @@ def intersectionsTrailsDB_queries_v2():
 								currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
 								row[fieldCount2] = currentEditDate
 								fieldCount2 += 1
-							cursor.updateRow(row)
+							insertCursor.updateRow(row)
 					# Insert new rows
 					if not intersectedValue in validationTableMainValuesList:
 						insertCursor = arcpy.da.InsertCursor(validationTablePath, validationTableFieldsNames)
