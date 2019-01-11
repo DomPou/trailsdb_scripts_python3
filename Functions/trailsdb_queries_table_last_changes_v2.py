@@ -152,10 +152,11 @@ def intersectionsTrailsDB_queries_v2():
 				if not currentMainValue in validationTableMainValuesList:
 					if not currentMainValue in valuesToIntersectList:
 						valuesToIntersectList.append(currentMainValue)
-			#print(valuesToIntersectList)
+			print(valuesToIntersectList)
 
 			# Intersection of needed feature classes
 			for valueToIntersect in valuesToIntersectList:
+				print(valueToIntersect)
 				tempFeaturesToIntersectList = []
 				intersectFeatureName = "int_" + valueToIntersect + "_" + status
 				intersectFeaturePath = gdbPath_queries + currentOutputDataset + gdbName_queries + ".sde." + intersectFeatureName
@@ -223,7 +224,7 @@ def intersectionsTrailsDB_queries_v2():
 						fieldCount2 = 1
 						mainValueField = validationTableFieldsNames[0]
 						whereClause = buildWhereClause(validationTablePath, mainValueField, intersectedValue)
-						for row in arcpy.da.UpdateCursor(validationTablePath, validationTableFieldsNames, whereClause):
+						for row in arcpy.da.UpdateCursor(validationTablePath, validationTableFieldsNames, whereClause) as cursor:
 							row[0] = intersectedValue
 							while fieldCount2 < len(validationTableFieldsNames):
 								currentField = validationTableFieldsNames[fieldCount2]
