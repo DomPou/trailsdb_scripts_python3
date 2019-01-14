@@ -229,10 +229,10 @@ def intersectionsTrailsDB_queries_v2():
 				for intersectedValue in valuesToIntersectList:
 					# Update existing rows
 					if intersectedValue in validationTableMainValuesList:
+						mainValueField = validationTableFieldsNames[0]
 						whereClause = buildWhereClause(validationTablePath, mainValueField, intersectedValue)
 						updateCursor = arcpy.da.UpdateCursor(validationTablePath, validationTableFieldsNames, whereClause)
 						fieldCount3 = 1
-						mainValueField = validationTableFieldsNames[0]
 						for row in updateCursor:
 							row[0] = intersectedValue
 							while fieldCount3 < len(validationTableFieldsNames):
