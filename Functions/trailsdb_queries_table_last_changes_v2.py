@@ -218,29 +218,37 @@ def intersectionsTrailsDB_queries_v2():
 						arcpy.Delete_management(tempFeature)
 
 				# Add or replace values from new intersections to validation table
+				# Get field position for rows
+				fieldPositionDict = {}
+				fieldCount2 = 0
+				for field in arcpy.ListFields(validationTablePath):
+					name = field.name
+					position = fieldCount2
+					fieldPositionDict.update({position: name})
+					fieldCount2 += 1
 				for intersectedValue in valuesToIntersectList:
 					# Update existing rows
 					if intersectedValue in validationTableMainValuesList:
-						insertCursor = arcpy.da.UpdateCursor(validationTablePath, validationTableFieldsNames, whereClause)
-						fieldCount2 = 1
-						mainValueField = validationTableFieldsNames[0]
 						whereClause = buildWhereClause(validationTablePath, mainValueField, intersectedValue)
-						for row in insertCursor:
+						updateCursor = arcpy.da.UpdateCursor(validationTablePath, validationTableFieldsNames, whereClause)
+						fieldCount3 = 1
+						mainValueField = validationTableFieldsNames[0]
+						for row in updateCursor:
 							row[0] = intersectedValue
-							while fieldCount2 < len(validationTableFieldsNames):
-								currentField = validationTableFieldsNames[fieldCount2]
+							while fieldCount3 < len(validationTableFieldsNames):
+								currentField = fieldPositionDict.get(fieldCount3)
 								currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
-								row[fieldCount2] = currentEditDate
-								fieldCount2 += 1
-							insertCursor.updateRow(row)
+								row[fieldCount3] = currentEditDate
+								fieldCount3 += 1
+								updateCursor.updateRow(row)
 					# Insert new rows
 					if not intersectedValue in validationTableMainValuesList:
 						insertCursor = arcpy.da.InsertCursor(validationTablePath, validationTableFieldsNames)
 						insertValues = [intersectedValue]
-						fieldCount3 = 1
-						while fieldCount3 < len(validationTableFieldsNames):
-							currentField = validationTableFieldsNames[fieldCount3]
+						fieldCount4 = 1
+						while fieldCount4 < len(validationTableFieldsNames):
+							currentField = fieldPositionDict.get(fieldCount4)
 							currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
 							insertValues.append(currentEditDate)
-							fieldCount3 += 1
+							fieldCount4 += 1
 						insertCursor.insertRow(insertValues)
