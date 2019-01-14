@@ -102,7 +102,7 @@ def intersectionsTrailsDB_queries_v2():
 					currentLength = currentLength + row[2]
 					mainValuesLengthDict.update({row[0]: currentLength})
 					if row[1] > currentMaxDate:
-						actualLastEditDatesDict.update({row[0]: row[1]})
+						actualLastEditDatesDict.update({str(row[0]) + currentMainFeature: row[1]})
 						#print(actualLastEditDatesDict)
 
 			# Get last edit dates from corresponding intersects from trailsdb_queries
@@ -156,99 +156,104 @@ def intersectionsTrailsDB_queries_v2():
 
 			# Intersection of needed feature classes
 			for valueToIntersect in valuesToIntersectList:
-				print(valueToIntersect)
-				tempFeaturesToIntersectList = []
-				intersectFeatureName = "int_" + valueToIntersect + "_" + status
-				intersectFeaturePath = gdbPath_queries + currentOutputDataset + gdbName_queries + ".sde." + intersectFeatureName
-				if arcpy.Exists(intersectFeaturePath):
-					arcpy.Delete_management(intersectFeaturePath)
-				# Create temporary features for intersect
-				for currentFeatureToIntersect in intersectFeaturesList:
-					currentFeatureToIntersectPath = "in_memory\\" + currentFeatureToIntersect
-					currentTempFeature = "in_memory\\" + currentFeatureToIntersect + valueToIntersect
-					if arcpy.Exists("temp"):
-						arcpy.Delete_management("temp")
-					if arcpy.Exists(currentTempFeature):
-						arcpy.Delete_management(currentTempFeature)
-					whereClause = buildWhereClause(currentFeatureToIntersectPath, mainFieldIntersects, valueToIntersect)
-					arcpy.MakeFeatureLayer_management(currentFeatureToIntersectPath, "temp")
-					arcpy.SelectLayerByAttribute_management("temp", "NEW_SELECTION", whereClause)
-					arcpy.CopyFeatures_management("temp", currentTempFeature)
-					selectCount = int(arcpy.GetCount_management(currentTempFeature).getOutput(0))
-					# Remove empty feature classes, keep others
-					if not selectCount == 0:
-						# Regional trail might not cover the whole main value, remove if so
-						if "regional_trail" in currentTempFeature:
-							# Get length for current main value
-							mainLength = mainValuesLengthDict.get(valueToIntersect)
-							# Get length for regional trail
-							currentLength = 0.0
-							for row in arcpy.da.SearchCursor(currentTempFeature,"SHAPE@LENGTH"):
-								currentLength = currentLength + row[0]
-								#print(currentLength)
-							if not currentLength < mainLength:
+				# Ignore None value related to error in the database because another tool identify these daily
+				if not valueToIntersect is None:
+					print(valueToIntersect)
+					tempFeaturesToIntersectList = []
+					intersectFeatureName = "int_" + valueToIntersect + "_" + status
+					intersectFeaturePath = gdbPath_queries + currentOutputDataset + gdbName_queries + ".sde." + intersectFeatureName
+					if arcpy.Exists(intersectFeaturePath):
+						arcpy.Delete_management(intersectFeaturePath)
+					# Create temporary features for intersect
+					for currentFeatureToIntersect in intersectFeaturesList:
+						currentFeatureToIntersectPath = "in_memory\\" + currentFeatureToIntersect
+						currentTempFeature = "in_memory\\" + currentFeatureToIntersect + valueToIntersect
+						if arcpy.Exists("temp"):
+							arcpy.Delete_management("temp")
+						if arcpy.Exists(currentTempFeature):
+							arcpy.Delete_management(currentTempFeature)
+						whereClause = buildWhereClause(currentFeatureToIntersectPath, mainFieldIntersects, valueToIntersect)
+						arcpy.MakeFeatureLayer_management(currentFeatureToIntersectPath, "temp")
+						arcpy.SelectLayerByAttribute_management("temp", "NEW_SELECTION", whereClause)
+						arcpy.CopyFeatures_management("temp", currentTempFeature)
+						selectCount = int(arcpy.GetCount_management(currentTempFeature).getOutput(0))
+						# Remove empty feature classes, keep others
+						if not selectCount == 0:
+							# Regional trail might not cover the whole main value, remove if so
+							if "regional_trail" in currentTempFeature:
+								# Get length for current main value
+								mainLength = mainValuesLengthDict.get(valueToIntersect)
+								# Get length for regional trail
+								currentLength = 0.0
+								for row in arcpy.da.SearchCursor(currentTempFeature,"SHAPE@LENGTH"):
+									currentLength = currentLength + row[0]
+									#print(currentLength)
+								if not currentLength < mainLength:
+									tempFeaturesToIntersectList.append(currentTempFeature)
+								if currentLength < mainLength:
+									arcpy.Delete_management(currentTempFeature)
+							if not "regional_trail" in currentTempFeature:
 								tempFeaturesToIntersectList.append(currentTempFeature)
-							if currentLength < mainLength:
-								arcpy.Delete_management(currentTempFeature)
-						if not "regional_trail" in currentTempFeature:
-							tempFeaturesToIntersectList.append(currentTempFeature)
-					if selectCount == 0:
-						arcpy.Delete_management(currentTempFeature)
-					arcpy.Delete_management("temp")
-					#print(tempFeaturesToIntersectList)
+						if selectCount == 0:
+							arcpy.Delete_management(currentTempFeature)
+						arcpy.Delete_management("temp")
+						#print(tempFeaturesToIntersectList)
 
-				# Make final intersect and add it to list of new features
-				print(intersectFeaturePath)
-				arcpy.Intersect_analysis(tempFeaturesToIntersectList, intersectFeaturePath,"NO_FID")
-				newIntersectedFeaturesList.append(intersectFeaturePath)
-				# Removes useless fields and renames the main one to be like in the validation table
-				for field in arcpy.ListFields(intersectFeaturePath):
-					# Removes duplicate of mainFieldIntersects
-					if field.name == mainFieldIntersects:
-							arcpy.AlterField_management(intersectFeaturePath, field.name, mainFieldValidationTableName, mainFieldValidationTableName)
-					if not field.name == mainFieldIntersects:
-						if field.aliasName == mainFieldIntersects:
-							try:
-								arcpy.DeleteField_management(intersectFeaturePath, field.name)
-							except:
-								print("essential field, cannot delete")
-				# Deletes temporary features
-				for tempFeature in tempFeaturesToIntersectList:
-					if arcpy.Exists(tempFeature):
-						arcpy.Delete_management(tempFeature)
+					# Make final intersect and add it to list of new features
+					#print(intersectFeaturePath)
+					arcpy.Intersect_analysis(tempFeaturesToIntersectList, intersectFeaturePath,"NO_FID")
+					newIntersectedFeaturesList.append(intersectFeaturePath)
+					# Removes useless fields and renames the main one to be like in the validation table
+					for field in arcpy.ListFields(intersectFeaturePath):
+						# Removes duplicate of mainFieldIntersects
+						if field.name == mainFieldIntersects:
+								arcpy.AlterField_management(intersectFeaturePath, field.name, mainFieldValidationTableName, mainFieldValidationTableName)
+						if not field.name == mainFieldIntersects:
+							if field.aliasName == mainFieldIntersects:
+								try:
+									arcpy.DeleteField_management(intersectFeaturePath, field.name)
+								except:
+									print("essential field, cannot delete")
+					# Deletes temporary features
+					for tempFeature in tempFeaturesToIntersectList:
+						if arcpy.Exists(tempFeature):
+							arcpy.Delete_management(tempFeature)
 
-				# Add or replace values from new intersections to validation table
-				# Get field position for rows
-				fieldPositionDict = {}
-				fieldCount2 = 0
-				for field in arcpy.ListFields(validationTablePath):
-					name = field.name
-					position = fieldCount2
-					fieldPositionDict.update({position: name})
-					fieldCount2 += 1
-				for intersectedValue in valuesToIntersectList:
-					# Update existing rows
-					if intersectedValue in validationTableMainValuesList:
-						mainValueField = validationTableFieldsNames[0]
-						whereClause = buildWhereClause(validationTablePath, mainValueField, intersectedValue)
-						updateCursor = arcpy.da.UpdateCursor(validationTablePath, validationTableFieldsNames, whereClause)
-						fieldCount3 = 1
-						for row in updateCursor:
-							row[0] = intersectedValue
-							while fieldCount3 < len(validationTableFieldsNames):
-								currentField = fieldPositionDict.get(fieldCount3)
-								currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
-								row[fieldCount3] = currentEditDate
-								fieldCount3 += 1
-								updateCursor.updateRow(row)
-					# Insert new rows
-					if not intersectedValue in validationTableMainValuesList:
-						insertCursor = arcpy.da.InsertCursor(validationTablePath, validationTableFieldsNames)
-						insertValues = [intersectedValue]
-						fieldCount4 = 1
-						while fieldCount4 < len(validationTableFieldsNames):
-							currentField = fieldPositionDict.get(fieldCount4)
+			# Add or replace values from new intersections to validation table
+			# Get field position for rows
+			fieldPositionDict = {}
+			fieldCount2 = 0
+			for field in arcpy.ListFields(validationTablePath):
+				name = field.name
+				position = fieldCount2
+				fieldPositionDict.update({position: name})
+				fieldCount2 += 1
+			for intersectedValue in valuesToIntersectList:
+				# Update existing rows
+				if intersectedValue in validationTableMainValuesList:
+					mainValueField = validationTableFieldsNames[0]
+					whereClause = buildWhereClause(validationTablePath, mainValueField, intersectedValue)
+					updateCursor = arcpy.da.UpdateCursor(validationTablePath, validationTableFieldsNames, whereClause)
+					fieldCount3 = 1
+					for row in updateCursor:
+						row[0] = intersectedValue
+						while fieldCount3 < len(validationTableFieldsNames):
+							currentField = fieldPositionDict.get(fieldCount3)
 							currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
-							insertValues.append(currentEditDate)
-							fieldCount4 += 1
-						insertCursor.insertRow(insertValues)
+							row[fieldCount3] = currentEditDate
+							fieldCount3 += 1
+							updateCursor.updateRow(row)
+				# Insert new rows
+				if not intersectedValue in validationTableMainValuesList:
+					insertCursor = arcpy.da.InsertCursor(validationTablePath, validationTableFieldsNames)
+					insertValues = [intersectedValue]
+					fieldCount4 = 1
+					while fieldCount4 < len(validationTableFieldsNames):
+						print(actualLastEditDatesDict)
+						print(fieldPositionDict)
+						print(fieldCount4)
+						currentField = fieldPositionDict.get(fieldCount4)
+						currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
+						insertValues.append(currentEditDate)
+						fieldCount4 += 1
+					insertCursor.insertRow(insertValues)
