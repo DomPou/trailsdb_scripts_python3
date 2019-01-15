@@ -125,7 +125,7 @@ def intersectionsTrailsDB_queries_v2():
 									lastEditDate = row[1]
 									# Ignore when mainValue is none (an error that will be reported in another script)
 									if not mainValue is None:
-										actualLastEditDatesDictKey = mainValue + intersectLastEditDateField
+										actualLastEditDatesDictKey = str(mainValue) + intersectLastEditDateField
 										currentLastEditDate = actualLastEditDatesDict.get(actualLastEditDatesDictKey)
 										if not currentLastEditDate is None:
 											if lastEditDate > currentLastEditDate:
