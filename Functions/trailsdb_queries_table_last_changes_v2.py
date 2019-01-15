@@ -256,6 +256,8 @@ def intersectionsTrailsDB_queries_v2():
 						print(fieldPositionDict)
 						print(fieldCount4)
 						currentField = fieldPositionDict.get(fieldCount4)
+						print(intersectedValue)
+						print(currentField)
 						currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
 						insertValues.append(currentEditDate)
 						fieldCount4 += 1
