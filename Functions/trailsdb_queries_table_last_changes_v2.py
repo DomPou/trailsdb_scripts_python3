@@ -163,14 +163,14 @@ def intersectionsTrailsDB_queries_v2():
 				if not valueToIntersect is None:
 					print(valueToIntersect)
 					tempFeaturesToIntersectList = []
-					intersectFeatureName = "int_" + valueToIntersect + "_" + status
+					intersectFeatureName = "int_" + str(valueToIntersect) + "_" + status
 					intersectFeaturePath = gdbPath_queries + currentOutputDataset + gdbName_queries + ".sde." + intersectFeatureName
 					if arcpy.Exists(intersectFeaturePath):
 						arcpy.Delete_management(intersectFeaturePath)
 					# Create temporary features for intersect
 					for currentFeatureToIntersect in intersectFeaturesList:
 						currentFeatureToIntersectPath = "in_memory\\" + currentFeatureToIntersect
-						currentTempFeature = "in_memory\\" + currentFeatureToIntersect + valueToIntersect
+						currentTempFeature = "in_memory\\" + currentFeatureToIntersect + str(valueToIntersect)
 						if arcpy.Exists("temp"):
 							arcpy.Delete_management("temp")
 						if arcpy.Exists(currentTempFeature):
