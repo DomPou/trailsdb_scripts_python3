@@ -99,7 +99,10 @@ def intersectionsTrailsDB_queries_v2():
 				if row[0] in mainValuesList:
 					currentMaxDate = actualLastEditDatesDict.get(row[0])
 					currentLength = mainValuesLengthDict.get(row[0])
-					currentLength = currentLength + row[2]
+					if not currentLength is None:
+						currentLength = currentLength + row[2]
+					if currentLength is None:
+						currentLength = row[2]
 					mainValuesLengthDict.update({row[0]: currentLength})
 					if row[1] > currentMaxDate:
 						actualLastEditDatesDict.update({str(row[0]) + currentMainFeature: row[1]})
