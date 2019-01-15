@@ -250,7 +250,7 @@ def intersectionsTrailsDB_queries_v2():
 				if not intersectedValue in validationTableMainValuesList:
 					insertCursor = arcpy.da.InsertCursor(validationTablePath, validationTableFieldsNames)
 					insertValues = [intersectedValue]
-					fieldCount4 = 1
+					fieldCount4 = 2 # the first to fields are objectid and trail_code, already included in list of values
 					while fieldCount4 < len(validationTableFieldsNames):
 						print(actualLastEditDatesDict)
 						print(fieldPositionDict)
