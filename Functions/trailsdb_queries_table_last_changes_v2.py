@@ -247,18 +247,20 @@ def intersectionsTrailsDB_queries_v2():
 							fieldCount3 += 1
 							updateCursor.updateRow(row)
 				# Insert new rows
-				if not intersectedValue in validationTableMainValuesList:
-					insertCursor = arcpy.da.InsertCursor(validationTablePath, validationTableFieldsNames)
-					insertValues = [intersectedValue]
-					fieldCount4 = 2 # the first to fields are objectid and trail_code, already included in list of values
-					while fieldCount4 < len(validationTableFieldsNames):
-						print(actualLastEditDatesDict)
-						print(fieldPositionDict)
-						print(fieldCount4)
-						currentField = fieldPositionDict.get(fieldCount4)
-						print(intersectedValue)
-						print(currentField)
-						currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
-						insertValues.append(currentEditDate)
-						fieldCount4 += 1
-					insertCursor.insertRow(insertValues)
+				# Ignore None values because they are errors in the db that will be reported by another script
+				if not intersectedValue is None:
+					if not intersectedValue in validationTableMainValuesList:
+						insertCursor = arcpy.da.InsertCursor(validationTablePath, validationTableFieldsNames)
+						insertValues = [intersectedValue]
+						fieldCount4 = 2 # the first to fields are objectid and trail_code, already included in list of values
+						while fieldCount4 < len(validationTableFieldsNames):
+							print(actualLastEditDatesDict)
+							print(fieldPositionDict)
+							print(fieldCount4)
+							currentField = fieldPositionDict.get(fieldCount4)
+							print(intersectedValue)
+							print(currentField)
+							currentEditDate = actualLastEditDatesDict.get(intersectedValue + currentField)
+							insertValues.append(currentEditDate)
+							fieldCount4 += 1
+						insertCursor.insertRow(insertValues)
