@@ -20,7 +20,8 @@ statusList = ["reg","pro"]
 trailsdbFeatureDict = {"trail_code": "trail_code", "project_trail": "project_code", "manager": "salesforceid_manager", "owner": "salesforceid_owner"}
 
 # trailsdb_queries
-mainFeatureList = ["trail_code", "project_trail", "manager", "owner"]
+#mainFeatureList = ["trail_code", "project_trail", "manager", "owner"]
+mainFeatureList = ["trail_code"]
 mainFieldsIntersectsDict = {"trail_code": "trail_trail_code", "project_trail": "proje_project_code", "manager": "manag_salesforceid_manager", "owner": "owner_salesforceid_owner"}
 mainFieldsValidationTableDict = {"trail_code": ["trail_code", "TEXT", 4], "project_trail": ["project_code", "LONG", 10], "manager": ["salesforceid_manager", "TEXT", 18], "owner": ["salesforceid_owner", "TEXT", 18]}
 
