@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7d7418df-37c6-4f82-a263-559cd0709500" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Variables TrailsDB on C">
+      <favorite_root url="file://C:/Trailsdb_Scripts/Variables/Connection_to_trailsdb_ArcGIS_Pro.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://C:/Trailsdb_Scripts/Variables/Connection_to_trailsdb.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_PairwiseIntersect_Two_Feature_Classes_v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_intersect_main_features_to_all_v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_table_last_changes_v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Functions/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="18" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Trailsdb_Scripts/Variables/Connection_to_trailsdb_ArcGIS_Pro.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Batch_files_etc/Intersections_running_order_v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mainValuesAllDatesDict</find>
+      <find>currentDataset</find>
+      <find>lastEditDatesDict</find>
+      <find>trailsdbFeatureMainFields</find>
+      <find>mainLastEditsName</find>
+      <find>mainFieldIntersects</find>
+      <find>mainFieldsIntersectsDict</find>
+      <find>validation</find>
+      <find>max</find>
+      <find>validationTableLastEditDatesDict</find>
+      <find>mainFieldsValidationTableDict</find>
+      <find>print</find>
+      <find>v1</find>
+      <find>intersectMainFeaturesToAll_v2</find>
+      <find>outFeature</find>
+      <find>intersectedFeaturesDict</find>
+      <find>mainValuesList</find>
+      <find>intersectFeaturesList</find>
+      <find>tempFeaturesToIntersectList</find>
+      <find>countField</find>
+      <find>fieldCount</find>
+      <find>valuesToIntersectList</find>
+      <find>actualLastEditDatesDict</find>
+      <find>+ row</find>
+      <find>mainValue +</find>
+      <find>valueToIntersect</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>lastEditDatesDict</replace>
+      <replace>actualLastEditDatesDict</replace>
+      <replace>v2</replace>
+      <replace>fieldCount3</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Variables/Connection_to_trailsdb_ArcGIS_Pro.py" />
+        <option value="C:/Trailsdb_Scripts/Variables/Connection_to_trailsdb.py" />
+        <option value="C:/Trailsdb_Scripts/Variables/Connection_to_trailsdb_ArcGIS_Pro.py" />
+        <option value="$PROJECT_DIR$/Functions/Build_SQL_Where_Clause.py" />
+        <option value="$PROJECT_DIR$/Batch_files_etc/task_scheduler_intersections.bat" />
+        <option value="$PROJECT_DIR$/Functions/trailsdb_queries_table_last_changes.py" />
+        <option value="$PROJECT_DIR$/Functions/trailsdb_queries_PairwiseIntersect_Two_Feature_Classes_v1.py" />
+        <option value="$PROJECT_DIR$/Functions/trailsdb_queries_Intersect_Two_Feature_Classes_v1.py" />
+        <option value="$PROJECT_DIR$/Functions/trailsdb_queries_intersect_main_features_to_all_v1.py" />
+        <option value="$PROJECT_DIR$/Batch_files_etc/Intersections_running_order.py" />
+        <option value="$PROJECT_DIR$/Functions/trailsdb_queries_intersect_main_features_to_all_v2.py" />
+        <option value="$PROJECT_DIR$/Batch_files_etc/Intersections_running_order_v2.py" />
+        <option value="$PROJECT_DIR$/Functions/trailsdb_queries_PairwiseIntersect_Two_Feature_Classes_v2.py" />
+        <option value="$PROJECT_DIR$/Functions/test.py" />
+        <option value="$PROJECT_DIR$/Functions/trailsdb_queries_table_last_changes_v2.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1880" />
+    <option name="y" value="-8" />
+    <option name="width" value="2420" />
+    <option name="height" value="1100" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="trailsdb_scripts_python3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trailsdb_scripts_python3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trailsdb_scripts_python3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trailsdb_scripts_python3" type="462c0819:PsiDirectoryNode" />
+              <item name="Batch_files_etc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trailsdb_scripts_python3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trailsdb_scripts_python3" type="462c0819:PsiDirectoryNode" />
+              <item name="Functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trailsdb_scripts_python3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DPoulin\OneDrive\trailsdb_scripts_python3\Batch_files_etc" />
+      <recent name="C:\Users\DPoulin\OneDrive\trailsdb_scripts_python3\Functions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Trailsdb_Scripts\Variables" />
+      <recent name="C:\Users\DPoulin\OneDrive\trailsdb_scripts_python3\Variables" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.Intersections_running_order_v2">
+    <configuration name="Intersections_running_order" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="trailsdb_scripts_python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Batch_files_etc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Batch_files_etc/Intersections_running_order.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Intersections_running_order_v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="trailsdb_scripts_python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Batch_files_etc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Batch_files_etc/Intersections_running_order_v2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="trailsdb_scripts_python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Functions" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Functions/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="trailsdb_queries_table_last_changes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="trailsdb_scripts_python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Functions" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Functions/trailsdb_queries_table_last_changes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="trailsdb_queries_table_last_changes_v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="trailsdb_scripts_python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Functions" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Functions/trailsdb_queries_table_last_changes_v2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Intersections_running_order_v2" />
+        <item itemvalue="Python.trailsdb_queries_table_last_changes_v2" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.Intersections_running_order" />
+        <item itemvalue="Python.trailsdb_queries_table_last_changes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d7418df-37c6-4f82-a263-559cd0709500" name="Default Changelist" comment="" />
+      <created>1545242671504</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545242671504</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1546632537965</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1546632537965</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added variables connection">
+      <created>1546635426594</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1546635426594</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added variables connection">
+      <created>1546635512791</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546635512791</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Removed Pairwise (not working properly)&#10;Back to Intersect">
+      <created>1546870598330</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1546870598330</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removed Pairwise (not working properly)&#10;Back to Intersect">
+      <created>1546974629763</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1546974629763</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Test for Pairwise on server">
+      <created>1546974704623</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1546974704623</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Test for Pairwise and in_memory on server">
+      <created>1547130208441</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1547130208441</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Test 2 for Pairwise and in_memory on server">
+      <created>1547151423545</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1547151423545</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Test 3 for Pairwise and in_memory on server">
+      <created>1547218537491</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1547218537491</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Test 3 for Pairwise and in_memory on server">
+      <created>1547219093843</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1547219093843</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Test 3 for Pairwise and in_memory on server">
+      <created>1547219204182</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1547219204182</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Test 4 for Pairwise and in_memory on server">
+      <created>1547481434103</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1547481434103</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Test 5 for Pairwise and in_memory on server">
+      <created>1547484491628</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1547484491628</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Test 6 for Pairwise and in_memory on server">
+      <created>1547494644032</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1547494644032</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Test 7 for Pairwise and in_memory on server">
+      <created>1547560189160</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1547560189160</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Test 8 for Pairwise and in_memory on server">
+      <created>1547563639106</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1547563639106</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Test 9 for Pairwise and in_memory on server">
+      <created>1547567358876</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1547567358876</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Test 9 for Pairwise and in_memory on server">
+      <created>1547571819992</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1547571819992</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Test 10 for Pairwise and in_memory on server">
+      <created>1547579128281</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1547579128281</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Test 11 for Pairwise and in_memory on server">
+      <created>1547584465846</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1547584465846</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Test 12 for Pairwise and in_memory on server">
+      <created>1547589049876</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1547589049876</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Test 13 for Pairwise and in_memory on server - Run every trail_code">
+      <created>1547653262675</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1547653262675</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1927" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.71180934" visible="true" weight="0.12491738" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.2881907" side_tool="true" weight="0.31717598" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2751896" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4409534" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.12606232" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49966952" weight="0.16576381" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50033045" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Added variables connection" />
+    <MESSAGE value="Removed Pairwise (not working properly)&#10;Back to Intersect" />
+    <MESSAGE value="Test for Pairwise on server" />
+    <MESSAGE value="Test for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 2 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 3 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 4 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 5 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 6 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 7 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 8 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 9 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 10 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 11 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 12 for Pairwise and in_memory on server" />
+    <MESSAGE value="Test 13 for Pairwise and in_memory on server - Run every trail_code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test 13 for Pairwise and in_memory on server - Run every trail_code" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://C:/Trailsdb_Scripts/Variables/Connection_to_trailsdb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="40" selection-start-line="40" selection-end-line="40" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Batch_files_etc/task_scheduler_intersections.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="162" lean-forward="true" selection-start-column="162" selection-end-column="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Build_SQL_Where_Clause.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_PairwiseIntersect_Two_Feature_Classes_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="121" column="16" lean-forward="true" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_Intersect_Two_Feature_Classes_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_intersect_main_features_to_all_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="62" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_table_last_changes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="80" column="53" lean-forward="true" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Batch_files_etc/Intersections_running_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="83" selection-start-line="5" selection-start-column="83" selection-end-line="5" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_PairwiseIntersect_Two_Feature_Classes_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_intersect_main_features_to_all_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Trailsdb_Scripts/Variables/Connection_to_trailsdb_ArcGIS_Pro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Batch_files_etc/Intersections_running_order_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/trailsdb_queries_table_last_changes_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
